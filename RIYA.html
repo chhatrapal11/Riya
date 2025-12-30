@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Riya 🦋</title>
+    <style>
+        /* General Styles */
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Nunito:wght@400;600&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+            font-family: 'Nunito', sans-serif;
+            overflow: hidden;
+        }
+
+        /* Container for the Card */
+        .container {
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* The Card Styling */
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 500px;
+            width: 90%;
+            transition: transform 0.5s ease;
+            backdrop-filter: blur(5px);
+            border: 2px solid white;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            color: #8e44ad;
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #555;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        /* Button Styling */
+        button {
+            background: linear-gradient(to right, #8e44ad, #c0392b);
+            border: none;
+            padding: 15px 30px;
+            color: white;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 600;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(142, 68, 173, 0.4);
+        }
+
+        /* The Letter Content (Hidden initially) */
+        #letter-content {
+            display: none;
+            text-align: left;
+            line-height: 1.6;
+            color: #444;
+        }
+
+        #letter-content p {
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            color: #8e44ad;
+            font-weight: bold;
+        }
+
+        /* Floating Butterflies Animation */
+        .butterfly {
+            position: absolute;
+            font-size: 2rem;
+            animation: fly 15s linear infinite;
+            z-index: 1;
+            opacity: 0.7;
+        }
+
+        @keyframes fly {
+            0% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.8; }
+            100% { transform: translate(100vw, -100vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.2rem; }
+            .card { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating Background Butterflies -->
+    <div class="butterfly" style="left: 10%; top: 90%; animation-duration: 12s;">🦋</div>
+    <div class="butterfly" style="left: 30%; top: 85%; animation-duration: 18s; animation-delay: 2s;">🦋</div>
+    <div class="butterfly" style="left: 70%; top: 95%; animation-duration: 14s; animation-delay: 1s;">🦋</div>
+    <div class="butterfly" style="left: 50%; top: 80%; animation-duration: 20s; animation-delay: 4s;">🦋</div>
+
+    <div class="container">
+        <div class="card" id="main-card">
+            <h1>Hey, Riya 🦋</h1>
+            <p class="subtitle" id="sub-text">I have a special message for you...</p>
+            
+            <button onclick="revealLetter()" id="open-btn">Open Letter 💌</button>
+
+            <div id="letter-content">
+                <p><strong>Dearest Riya,</strong></p>
+                
+                <p>They say that friends are the family we choose for ourselves, and looking at you, I know that statement is 100% true. You are not just a best friend to me; you are truly my <span class="highlight">sister from another mother</span>.</p>
+                
+                <p>I wanted to create this little space just to tell you how incredibly grateful I am for you. Your energy is unmatched, and you are hands down the most <strong>joyful</strong> person I know. You have this magical ability to light up a room just by walking into it.</p>
+                
+                <p>Thank you for sticking by my side, for the endless laughter, and for being the best sister a person could ask for. Life is just better with you in it.</p>
+                
+                <p>Stay amazing, stay joyful, and keep flying high.</p>
+                
+                <p style="text-align: right; margin-top: 30px;">
+                    With lots of love,<br>
+                    <strong>Your Sibling at Heart ❤️
+~Chhatrapal</strong>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function revealLetter() {
+            const btn = document.getElementById('open-btn');
+            const subText = document.getElementById('sub-text');
+            const content = document.getElementById('letter-content');
+            
+            // Hide the button and subtitle
+            btn.style.display = 'none';
+            subText.style.display = 'none';
+            
+            // Show the content with a fade-in effect
+            content.style.display = 'block';
+            content.style.animation = 'fadeIn 1.5s';
+        }
+    </script>
+</body>
+</html>
